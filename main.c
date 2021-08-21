@@ -8,9 +8,9 @@
 
 int main()
 {
-    unsigned int tabelaFreq[TAM];
-    unsigned char *texto = "Trabalho de estrutura de dados 2";
-    Lista *lista;
+    char *texto = "Trabalho de estrutura de dados 2";
+    int tabelaFreq[TAM];
+    Lista lista;
     No *arvore;
     int altura;
     char **dicionario;
@@ -24,12 +24,12 @@ int main()
     imprimirTabFreq(tabelaFreq);
 
     /* LISTA ENCADEADA ORDENADA */
-    criarLista(lista);
-    preencherLista(tabelaFreq, lista);
-    imprimirLista(lista);
+    criarLista(&lista);
+    preencherLista(tabelaFreq, &lista);
+    imprimirLista(&lista);
 
     /* MONTAR A ÁRVORE DE HUFFMAN */
-    arvore = montarArvore(lista);
+    arvore = montarArvore(&lista);
     printf("\n\tÁrvore de Huffman\n");
     imprimirArvore(arvore, 0);
 
@@ -58,10 +58,10 @@ int main()
     printf("\tTexto comprimido em aproximadamente: %.0f%%\n\n", round(porcentagem));
 
     /* DESALOCAR MEMÓRIA */
-    free(lista);
+    /* free(lista);
     free(arvore);
     free(dicionario);
-    free(textocodificado);
+    free(textocodificado); */
 
     return 0;
 }

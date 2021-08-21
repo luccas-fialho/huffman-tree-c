@@ -1,18 +1,18 @@
 #include "huffman.h"
 
-void inicializarTabFreq(unsigned int *tab)
+void inicializarTabFreq(int *tab)
 {
     for (int i = 0; i < TAM; i++)
         tab[i] = 0;
 }
 
-void preencherTabFreq(unsigned char *texto, unsigned int *tab)
+void preencherTabFreq( char *texto, int *tab)
 {
     for (int i = 0; texto[i] != '\0'; i++)
         tab[texto[i]]++;
 }
 
-void imprimirTabFreq(unsigned int *tab)
+void imprimirTabFreq(int *tab)
 {
     printf("\tTABELA DE FREQUENCIA\n");
     for (int i = 0; i < TAM; i++)
@@ -28,7 +28,7 @@ void criarLista(Lista *lista)
     lista->tam = 0;
 }
 
-bool vazia(Lista *lista)
+int vazia(Lista *lista)
 {
     return (lista->inicio == NULL);
 }
@@ -57,13 +57,14 @@ void inserirOrdenado(Lista *lista, No *elem)
     lista->tam++;
 }
 
-void preencherLista(unsigned int *tab, Lista *lista)
+void preencherLista( int *tab, Lista *lista)
 {
     No *novo = NULL;
     for (int i = 0; i < TAM; i++)
     {
         if (tab[i] > 0)
         {
+            //printf("\tTestando: %c\n", i);
             novo = (No *)malloc(sizeof(No));
             if (novo)
             {
@@ -85,10 +86,13 @@ void preencherLista(unsigned int *tab, Lista *lista)
 
 void imprimirLista(Lista *lista)
 {
-    No *aux = NULL;
+    No *aux = lista->inicio;
     printf("\n\tLista ordenada: Tamanho: %d\n", lista->tam);
-    for (aux = lista->inicio; aux != NULL; aux = aux->prox)
+    while(aux)
+    {
         printf("\tCaracter: %c Frequência: %d\n", aux->caracter, aux->freq);
+        aux = aux->prox;
+    }       
 }
 
 No *removerNoInicio(Lista *lista)
@@ -132,7 +136,7 @@ No *montarArvore(Lista *lista)
     return lista->inicio;
 }
 
-bool ehFolha(No *raiz)
+int ehFolha(No *raiz)
 {
     return (raiz->esq == NULL && raiz->dir == NULL);
 }
@@ -210,7 +214,7 @@ void imprimirDicionario(char **dicionario)
             printf("\t%3d: %c: %s\n", i, i, dicionario[i]);
 }
 
-char *codificarTexto(unsigned char *texto, char **dicionario)
+char *codificarTexto(char *texto, char **dicionario)
 {
     char *textocodificado = (char *)calloc(0, sizeof(char));
     printf("\n");

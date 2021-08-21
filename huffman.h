@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include <locale.h>
-#include <string.h>
 #include <math.h>
+#include <string.h>
+#include <locale.h>
+
 #define TAM 256
 
 typedef struct no
@@ -20,25 +20,25 @@ typedef struct
 } Lista;
 
 /* Inicializa a tabela com valores 0 */
-void inicializarTabFreq(unsigned int *tab);
+void inicializarTabFreq(int *tab);
 
 /* Preenche a tabela com a frequencia dos caracteres da frase */
-void preencherTabFreq(unsigned char *texto, unsigned int *tab);
+void preencherTabFreq(char *texto, int *tab);
 
 /* Imprime a tabela com a frequencia dos caracteres */
-void imprimirTabFreq(unsigned int *tab);
+void imprimirTabFreq(int *tab);
 
 /* Cria a lista encadeada */
 void criarLista(Lista *lista);
 
 /* Verifica se a lista está vazia */
-bool vazia(Lista *lista);
+int vazia(Lista *lista);
 
 /* Insere um elemento ordenadamente na lista */
 void inserirOrdenado(Lista *lista, No *elem);
 
 /* Preenche a lista encadeada com os caracteres com frequencia crescente */
-void preencherLista(unsigned int *tab, Lista *lista);
+void preencherLista( int *tab, Lista *lista);
 
 /* Imprime a lista encadeada */
 void imprimirLista(Lista *lista);
@@ -50,7 +50,7 @@ No *removerNoInicio(Lista *lista);
 No *montarArvore(Lista *lista);
 
 /* Verifica se um nó é uma folha */
-bool ehFolha(No *raiz);
+int ehFolha(No *raiz);
 
 /* Imprime a árvore de Huffman e a altura de cada caracter da frase */
 void imprimirArvore(No *raiz, int altura);
@@ -68,7 +68,7 @@ void gerarDicionario(char **dicionario, No *raiz, char *codigo, int colunas);
 void imprimirDicionario(char **dicionario);
 
 /* Retorna o texto codificado, os bits de todos os caracteres */
-char *codificarTexto(unsigned char *texto, char **dicionario);
+char *codificarTexto( char *texto, char **dicionario);
 
 /* Imprime o texto codificado */
 void imprimirTextoCodificado(char *textocodificado);
