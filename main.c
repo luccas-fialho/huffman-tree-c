@@ -17,8 +17,6 @@ int main()
     char **dicionario;
     char *textocodificado;
 
-    setlocale(LC_ALL, "Portuguese");
-
     /* TABELA DE FREQUENCIA */
     inicializarTabFreq(tabelaFreq);
     preencherTabFreq(texto, tabelaFreq);

@@ -193,8 +193,8 @@ void gerarDicionario(char **dicionario, No *raiz, char *codigo, int colunas)
         strcpy(esq, codigo);
         strcpy(dir, codigo);
 
-        strcat(esq, "0");
-        strcat(dir, "1");
+        strcat(esq, "0"); // Ir a esquerda, concatena 0
+        strcat(dir, "1"); // Ir a direita, concatena 1
 
         gerarDicionario(dicionario, raiz->esq, esq, colunas);
         gerarDicionario(dicionario, raiz->dir, dir, colunas);
