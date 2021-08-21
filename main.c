@@ -54,14 +54,12 @@ int main()
     int tamDescompactado = strlen(textocodificado);
     printf("\tTamanho do texto compactado: %d bits ou %.0f Bytes.\n", tamDescompactado, round((float)tamDescompactado / 8.0));
 
-    float porcentagem = 100.0 - ((float)(tamDescompactado * 100) / (float)tamReal);
+    float porcentagem = 100.0 - (100.0 * ((float)(tamDescompactado) / (float)tamReal));
     printf("\tTexto comprimido em aproximadamente: %.0f%%\n\n", round(porcentagem));
 
     /* DESALOCAR MEMÓRIA */
-    /* free(lista);
     free(arvore);
     free(dicionario);
-    free(textocodificado); */
 
     return 0;
 }

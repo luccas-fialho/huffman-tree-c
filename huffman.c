@@ -14,11 +14,11 @@ void preencherTabFreq(char *texto, int *tab)
 
 void imprimirTabFreq(int *tab)
 {
-    printf("\tTABELA DE FREQUENCIA\n");
+    printf("\tTabela de frequência\n");
     for (int i = 0; i < TAM; i++)
     {
         if (tab[i] > 0)
-            printf("\t%d = %u = %c\n", i, tab[i], i);
+            printf("\t%3d = %u = %c\n", i, tab[i], i);
     }
 }
 
@@ -64,7 +64,6 @@ void preencherLista(int *tab, Lista *lista)
     {
         if (tab[i] > 0)
         {
-            //printf("\tTestando: %c\n", i);
             novo = (No *)malloc(sizeof(No));
             if (novo)
             {
@@ -145,7 +144,7 @@ void imprimirArvore(No *raiz, int altura)
 {
     if (ehFolha(raiz))
     {
-        printf("\tFolha: %c\tAltura: %d\n", raiz->caracter, altura);
+        printf("\tFolha: %c com altura: %d\n", raiz->caracter, altura);
     }
     else
     {
@@ -218,7 +217,6 @@ char *codificarTexto(char *texto, char **dicionario)
     printf("\n");
     for (int i = 0; texto[i] != '\0'; i++)
     {
-        //printf("\t%s\n", dicionario[texto[i]]);
         strcat(textocodificado, dicionario[texto[i]]);
     }
     return textocodificado;
