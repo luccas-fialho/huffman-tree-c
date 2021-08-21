@@ -38,7 +38,7 @@ int vazia(Lista *lista);
 void inserirOrdenado(Lista *lista, No *elem);
 
 /* Preenche a lista encadeada com os caracteres com frequencia crescente */
-void preencherLista( int *tab, Lista *lista);
+void preencherLista(int *tab, Lista *lista);
 
 /* Imprime a lista encadeada */
 void imprimirLista(Lista *lista);
@@ -68,7 +68,7 @@ void gerarDicionario(char **dicionario, No *raiz, char *codigo, int colunas);
 void imprimirDicionario(char **dicionario);
 
 /* Retorna o texto codificado, os bits de todos os caracteres */
-char *codificarTexto( char *texto, char **dicionario);
+char *codificarTexto(char *texto, char **dicionario);
 
 /* Imprime o texto codificado */
 void imprimirTextoCodificado(char *textocodificado);

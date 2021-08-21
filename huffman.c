@@ -6,7 +6,7 @@ void inicializarTabFreq(int *tab)
         tab[i] = 0;
 }
 
-void preencherTabFreq( char *texto, int *tab)
+void preencherTabFreq(char *texto, int *tab)
 {
     for (int i = 0; texto[i] != '\0'; i++)
         tab[texto[i]]++;
@@ -57,7 +57,7 @@ void inserirOrdenado(Lista *lista, No *elem)
     lista->tam++;
 }
 
-void preencherLista( int *tab, Lista *lista)
+void preencherLista(int *tab, Lista *lista)
 {
     No *novo = NULL;
     for (int i = 0; i < TAM; i++)
@@ -88,11 +88,11 @@ void imprimirLista(Lista *lista)
 {
     No *aux = lista->inicio;
     printf("\n\tLista ordenada: Tamanho: %d\n", lista->tam);
-    while(aux)
+    while (aux)
     {
         printf("\tCaracter: %c Frequência: %d\n", aux->caracter, aux->freq);
         aux = aux->prox;
-    }       
+    }
 }
 
 No *removerNoInicio(Lista *lista)
@@ -182,8 +182,6 @@ char **alocarDicionario(int colunas)
 
 void gerarDicionario(char **dicionario, No *raiz, char *codigo, int colunas)
 {
-    //char esq[colunas], dir[colunas];
-    //array = (int *)malloc(size * sizeof(int));
     char *esq = (char *)malloc(colunas * sizeof(char));
     char *dir = (char *)malloc(colunas * sizeof(char));
 
