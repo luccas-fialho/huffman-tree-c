@@ -8,7 +8,8 @@
 
 int main()
 {
-    char *texto = "Trabalho de estrutura de dados 2";
+    // Texto precisa ser sem acentos e caracteres especiais
+    char *texto = "Trabalho de estrutura de dados 2"; 
     int tabelaFreq[TAM];
     Lista lista;
     No *arvore;

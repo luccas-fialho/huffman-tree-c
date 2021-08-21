@@ -208,7 +208,7 @@ void imprimirDicionario(char **dicionario)
     printf("\n\tDicionario:\n");
     for (int i = 0; i < TAM; i++)
         if (strlen(dicionario[i]) > 0)
-            printf("\t%3d: %c: %s\n", i, i, dicionario[i]);
+            printf("\t%c: %s\n", i, dicionario[i]);
 }
 
 char *codificarTexto(char *texto, char **dicionario)
